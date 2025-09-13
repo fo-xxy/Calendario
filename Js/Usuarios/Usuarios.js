@@ -178,7 +178,13 @@ $("#btnAgregar").on("click", function () {
       },
       success: function (response) {
         if (response.rta) {
-          Swal.fire('¡Éxito!', response.message, 'success').then(() => {
+          Swal.fire({title:'¡Éxito!', 
+            text: response.message, 
+            icon: 'success',
+            iconColor: '#66CAF2',
+            confirmButtonColor: '#66CAF2',
+          
+          }).then(() => {
             $("#modalUsuario").modal('hide');
             CargarUsuarios();
           });
@@ -311,7 +317,13 @@ $("#btnActualizar").on("click", function () {
       },
       success: function (response) {
         if (response.rta) {
-          Swal.fire('¡Éxito!', response.message, 'success').then(() => {
+          Swal.fire({title:'¡Éxito!', 
+            text: response.message, 
+            icon: 'success',
+            iconColor: '#66CAF2',
+            confirmButtonColor: '#66CAF2',
+          
+          }).then(() => {
             $("#modalUsuario").modal('hide');
             CargarUsuarios();
           });
@@ -408,9 +420,12 @@ function eliminarUsuario(idUsuario) {
     title: "¿Estás seguro?",
     text: "Esta acción no se puede deshacer",
     icon: "warning",
+    iconColor: '#dc3545',
     showCancelButton: true,
     confirmButtonText: "Sí, eliminar",
-    cancelButtonText: "Cancelar"
+    cancelButtonText: "Cancelar",
+    confirmButtonColor: '#66CAF2',
+    cancelButtonColor: '#dc3545'
   }).then((result) => {
     if (result.isConfirmed) {
 
@@ -427,8 +442,14 @@ function eliminarUsuario(idUsuario) {
           }
           return response.json();
         })
-        .then((data) => {
-          Swal.fire("Eliminado", "El registro se eliminó correctamente", "success");
+        .then((response) => {
+          Swal.fire({
+            title: '¡Éxito!',
+            text: response.message,
+            icon: 'success',
+            iconColor: '#66CAF2',
+            confirmButtonColor: '#66CAF2',
+          });
 
           CargarUsuarios();
         })

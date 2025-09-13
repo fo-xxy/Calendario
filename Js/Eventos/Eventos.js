@@ -94,10 +94,11 @@ $("#btnAgregarEvento").on("click", function () {
   var tipo = document.getElementById("selectTipo").value;
   var fecha = document.getElementById("inputAnio").value;
 
+  console.log(fecha);
 const soloFecha = fecha.split("T");
 
 
-  const datos = { titulo, tipo, ano: soloFecha }
+  const datos = { titulo, tipo, ano: fecha }
 
     console.log(datos);
 

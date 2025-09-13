@@ -104,7 +104,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
                     </div>-->
                     <div class="mb-3">
                         <label for="eventoAnio" class="form-label">Año</label>
-                        <input type="date" class="form-control" id="inputAnio" required>
+                        <input type="datetime" class="form-control" id="inputAnio" required>
                     </div>
 
                     <!--<div class="mb-3">

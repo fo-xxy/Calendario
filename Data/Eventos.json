@@ -1,0 +1,79 @@
+[
+  {
+    "id": 1,
+    "fecha": "05-09-2025",
+    "año": "2025",
+    "evento": "Reunión de equipo",
+    "descripcion_evento": "Reunión semanal para revisar el progreso de los proyectos en curso."
+  },
+  {
+    "id": 2,
+    "fecha": "2025-09-10",
+    "año": "2025",
+    "evento": "Conferencia de desarrollo web",
+    "descripcion_evento": "Asistencia a conferencia sobre nuevas tecnologías en desarrollo web."
+  },
+  {
+    "id": 3,
+    "fecha": "2025-09-15",
+    "año": "2025",
+    "evento": "Cumpleaños de Ana",
+    "descripcion_evento": "Celebración del cumpleaños de Ana en el restaurante local."
+  },
+  {
+    "id": 4,
+    "fecha": "2025-09-18",
+    "año": "2025",
+    "evento": "Taller de diseño gráfico",
+    "descripcion_evento": "Taller de introducción al diseño gráfico para principiantes."
+  },
+  {
+    "id": 5,
+    "fecha": "2025-09-22",
+    "año": "2025",
+    "evento": "Revisión de proyecto",
+    "descripcion_evento": "Revisión de las entregas y avances de un proyecto importante."
+  },
+  {
+    "id": 11,
+    "fecha": "2025-09-22",
+    "año": "2025",
+    "evento": "Revisión de proyecto",
+    "descripcion_evento": "Revisión de las entregas y avances de un proyecto importante."
+  },
+  {
+    "id": 6,
+    "fecha": "2025-09-25",
+    "año": "2025",
+    "evento": "Cena de trabajo",
+    "descripcion_evento": "Cena de trabajo para cerrar negociaciones con un cliente potencial."
+  },
+  {
+    "id": 7,
+    "fecha": "2025-09-30",
+    "año": "2025",
+    "evento": "Lanzamiento de producto",
+    "descripcion_evento": "Evento de lanzamiento de una nueva aplicación móvil para usuarios."
+  },
+  {
+    "id": 8,
+    "fecha": "2025-10-02",
+    "año": "2025",
+    "evento": "Reunión con inversores",
+    "descripcion_evento": "Reunión para presentar los resultados del último trimestre y discutir futuras inversiones."
+  },
+  {
+    "id": 9,
+    "fecha": "2025-10-07",
+    "año": "2025",
+    "evento": "Concierto de rock",
+    "descripcion_evento": "Asistencia al concierto de una banda de rock local en el auditorio."
+  },
+  {
+    "id": 10,
+    "fecha": "2025-10-10",
+    "año": "2025",
+    "evento": "Feria de tecnología",
+    "descripcion_evento": "Visita a una feria de tecnología para conocer los últimos avances en el sector."
+  }
+]

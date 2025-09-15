@@ -12,7 +12,7 @@
 
  .b-calendar .b-calendar-grid-body .b-calendar-grid-btn.active,
 .b-calendar .b-calendar-grid-body .b-calendar-grid-btn.selected {
-  background-color: #3DBFF2 !important; /* verde Bootstrap */
+  background-color: #3DBFF2 !important; 
   color: white !important;
   border-color: #3DBFF2 !important;
 }
@@ -109,7 +109,6 @@
 
  .transparent-btn:hover i {
      color: #007bff;
-     /* Cambia el color del ícono al hacer hover (puedes personalizarlo) */
  }
 
 

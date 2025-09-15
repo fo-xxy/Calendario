@@ -41,9 +41,6 @@ function CargarEventos() {
 
         data.Efemeride.sort((a, b) => a.id - b.id);
 
-
-
-        console.log(data.Efemeride);
         data.Efemeride.forEach((evento) => {
           const rowHTML = `
             <tr>
@@ -82,7 +79,7 @@ function CargarEventos() {
   });
 }
 window.onload = CargarEventos();
-//                <td>${evento.titulo.slice(0, 80)}${evento.titulo.length > 80 ? '...' : ''}</td>
+//<td>${evento.titulo.slice(0, 80)}${evento.titulo.length > 80 ? '...' : ''}</td>
 
 
 //Crear evento
@@ -95,13 +92,9 @@ $("#btnAgregarEvento").on("click", function () {
   var fecha = document.getElementById("inputAnio").value;
 
   console.log(fecha);
-const soloFecha = fecha.split("T");
-
+  const soloFecha = fecha.split("T");
 
   const datos = { titulo, tipo, ano: fecha }
-
-    console.log(datos);
-
 
   if (titulo == " ") {
     document.getElementById("inputTitulo").focus();
@@ -163,7 +156,7 @@ const soloFecha = fecha.split("T");
   }
 });
 
-
+//Seleccionar registro
 function openEditModalEvento(button) {
   const fila = button.closest("tr");
 
@@ -203,7 +196,6 @@ function openEditModalEvento(button) {
   btnAgregar.classList.add("d-none");
   document.getElementById("modalAgregarEventoLabel").textContent = "Editar evento";
 }
-
 
 const modalEl = document.getElementById("modalAgregarEvento");
 
@@ -304,7 +296,6 @@ $("#btnActualizarEvento").on("click", function () {
   }
 });
 
-
 //Eliminar evento
 function eliminarEvento(idEvento) {
 
@@ -352,4 +343,3 @@ function eliminarEvento(idEvento) {
     }
   });
 }
-

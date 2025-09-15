@@ -27,7 +27,9 @@ include "../Views/Plantillas/MenuHamburguesa.php"
         <!-- Enlace para abrir el modal -->
         <div class="text-end mb-3">
             <a href="#" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario">Agregar usuario</a>
+            <a href="#" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalCambiarContrasena">Cambiar contraseña</a>
         </div>
+        
         <div class="input-group">
             <input type="text" class="form-control border-end-0 border rounded-pill" id="datatable-search-input" oninput="searchData()" placeholder="Busca el evento" />
         </div>
@@ -65,7 +67,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
 
                     <input type="hidden" id="inputIdUsuario">
 
-                    <div class="mb-3" >
+                    <div class="mb-3">
                         <label for="lblNombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="inputNombre" required>
                     </div>
@@ -95,8 +97,36 @@ include "../Views/Plantillas/MenuHamburguesa.php"
             </div>
         </div>
     </div>
-</body>
 
+    <div class="modal fade" id="modalCambiarContrasena" tabindex="-1" aria-labelledby="modalCambiarContrasena" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalCambiarContrasena">Cambiar contraseña</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+        
+                    <div class="mb-3">
+                        <label for="lblUsuario" class="form-label">Usuario</label>
+                        <select id="selectUsuarios" class="form-select">
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="lblContrasena" class="form-label">Contraseña</label>
+                        <input type="password" class="form-control" id="inputContrasenaAc" required>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+
+                    <button type="button" class="btn btn-primary" id="btnActualizarContrasena">Actualizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

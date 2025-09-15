@@ -65,7 +65,3 @@ $('#btnLogin').click(function (r) {
         });
     }
 });
-
-
-
-

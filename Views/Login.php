@@ -40,7 +40,6 @@
 
                         </form>
 
-
                     </div>
                     <div class="col-sm-6 hide-on-mobile">
                         <div id="demo" class="carousel slide" data-ride="carousel">

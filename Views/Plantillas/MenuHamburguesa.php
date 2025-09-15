@@ -40,7 +40,6 @@
                                 <i class="fa-solid fa-user me-2"></i> Administración de usuarios
                             </a>
                         </li>
-
                     </ul>
                     <!--<form class="d-flex mt-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
@@ -68,7 +67,6 @@
      
       window.location.href = "../Views/Login.php";
     }
-
   });
 </script>
 </html>

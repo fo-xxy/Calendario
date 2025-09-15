@@ -2,7 +2,7 @@ new Vue({
   el: '#calendario',
   data() {
     return {
-      value: '', 
+      value: '',
       eventos: [],
       datos: []
     };
@@ -38,20 +38,18 @@ new Vue({
   methods: {
     onDateSelected() {
 
-const selectedDate = this.value; // "2025-09-18"
+      const selectedDate = this.value;
 
-// Filtrar los eventos cuyo "ano" coincida con la fecha seleccionada
-const eventosParaFecha = this.datos.filter(evento => {
-  // Accede al campo "ano" y quita la hora si viene incluida
-  const fechaEvento = String(evento.ano).split(" ")[0]; // -> "2025-09-18"
-  return fechaEvento === selectedDate;
-});
+      const eventosParaFecha = this.datos.filter(evento => {
 
-this.eventos = eventosParaFecha;
+        const fechaEvento = String(evento.ano).split(" ")[0];
+        return fechaEvento === selectedDate;
+      });
 
-console.log('Fecha seleccionada:', selectedDate);
-console.log('Eventos encontrados:', eventosParaFecha);
+      this.eventos = eventosParaFecha;
+
+      console.log('Fecha seleccionada:', selectedDate);
+      console.log('Eventos encontrados:', eventosParaFecha);
     }
   }
 });
-

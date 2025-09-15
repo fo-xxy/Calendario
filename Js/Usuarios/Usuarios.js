@@ -1,4 +1,3 @@
-
 // Función para realizar la búsqueda en los eventos
 function searchData() {
   const query = document
@@ -64,6 +63,17 @@ function CargarUsuarios() {
           tablaUSuarios.append(rowHTML);
         });
 
+        const selectUsuarios = document.getElementById("selectUsuarios");
+
+        selectUsuarios.innerHTML = '<option value="">Seleccione un usuario</option>';
+
+        data.usuarios.forEach(usuario => {
+          const option = document.createElement("option");
+          option.value = usuario.id;        
+          option.textContent = usuario.nombre; 
+          selectUsuarios.appendChild(option);
+        });
+
       } else {
         container.html('<p>No hay usuarios disponibles.</p>');
       }
@@ -76,7 +86,7 @@ function CargarUsuarios() {
 
 window.onload = CargarUsuarios();
 
-
+//Cargar roles
 function CargarRoles() {
 
   const selectRoles = $("#selectRoles");
@@ -110,7 +120,6 @@ function CargarRoles() {
 }
 
 window.onload = CargarRoles();
-
 
 //CRear usuario
 $("#btnAgregar").on("click", function () {
@@ -178,12 +187,13 @@ $("#btnAgregar").on("click", function () {
       },
       success: function (response) {
         if (response.rta) {
-          Swal.fire({title:'¡Éxito!', 
-            text: response.message, 
+          Swal.fire({
+            title: '¡Éxito!',
+            text: response.message,
             icon: 'success',
             iconColor: '#66CAF2',
             confirmButtonColor: '#66CAF2',
-          
+
           }).then(() => {
             $("#modalUsuario").modal('hide');
             CargarUsuarios();
@@ -233,7 +243,7 @@ function openEditModal(button) {
 const modalEl = document.getElementById("modalAgregarUsuario");
 
 modalEl.addEventListener("show.bs.modal", function (event) {
-  const trigger = event.relatedTarget; // El botón/enlace que abrió el modal
+  const trigger = event.relatedTarget;
   const btnActualizar = document.getElementById("btnActualizar");
   const inputContrasena = document.getElementById("divContrasena");
   const btnAgregar = document.getElementById("btnAgregar");
@@ -252,7 +262,6 @@ modalEl.addEventListener("show.bs.modal", function (event) {
   }
 });
 
-
 //Editar 
 $("#btnActualizar").on("click", function () {
 
@@ -266,8 +275,6 @@ $("#btnActualizar").on("click", function () {
   var id_rol = document.getElementById("selectRoles").value;
 
   console.log("Rol seleccionado:", id_rol);
-
-  var url = 'https://efemerides.elkin.click/api/usuario/actualizar/' + idUsuario;
 
   const datos = { idUsuario, nombre, apellido, correo, id_rol }
 
@@ -317,12 +324,13 @@ $("#btnActualizar").on("click", function () {
       },
       success: function (response) {
         if (response.rta) {
-          Swal.fire({title:'¡Éxito!', 
-            text: response.message, 
+          Swal.fire({
+            title: '¡Éxito!',
+            text: response.message,
             icon: 'success',
             iconColor: '#66CAF2',
             confirmButtonColor: '#66CAF2',
-          
+
           }).then(() => {
             $("#modalUsuario").modal('hide');
             CargarUsuarios();
@@ -460,7 +468,72 @@ function eliminarUsuario(idUsuario) {
   });
 }
 
+//Cambio de contraseña
+$("#btnActualizarContrasena").on("click", function () {
+
+  console.log("entró a actualizar contraseña");
+  let token = localStorage.getItem("token");
+
+  var idUsuario = document.getElementById("selectUsuarios").value;
+  var clave = document.getElementById("inputContrasenaAc").value;
 
 
+  console.log(clave);
+  const datos = { idUsuario, clave}
 
+  console.log(datos);
+  if (idUsuario == 0) {
 
+    document.getElementById("inputNombre").focus();
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Debe seleccionar un usuario.',
+    });
+  }
+  else if (clave == "") {
+
+    document.getElementById("inputContrasenaAc").focus();
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'El campo contraseña no puede estar vacío.',
+    });
+  }
+  else {
+    $.ajax({
+
+      url: 'https://efemerides.elkin.click/api/usuario/actualizarClave/' + idUsuario,
+      method: 'PUT',
+      contentType: 'application/json',
+      data: JSON.stringify(datos),
+      headers: {
+        "Authorization": "Bearer " + token
+      },
+      success: function (response) {
+        if (response.rta) {
+          Swal.fire({
+            title: '¡Éxito!',
+            text: response.message,
+            icon: 'success',
+            iconColor: '#66CAF2',
+            confirmButtonColor: '#66CAF2',
+
+          }).then(() => {
+            $("#modalCambiarContrasena").modal('hide');
+            CargarUsuarios();
+          });
+
+          $("#modalCambiarContrasena").modal('hide');
+
+        } else {
+          Swal.fire('Error', response.message, 'error');
+        }
+      },
+      error: function () {
+        console.log(url);
+        Swal.fire('Error', 'No se pudo actualizar la contraseña.', 'error');
+      }
+    });
+  }
+});

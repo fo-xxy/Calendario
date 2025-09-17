@@ -19,10 +19,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
 
 <body>
     <section class="seccionTabla">
-        <div class="titulo">
-            <h4>Usuarios</h4>
-
-        </div>
+        
 
         <!-- Enlace para abrir el modal -->
         <div class="text-end mb-3">
@@ -38,7 +35,6 @@ include "../Views/Plantillas/MenuHamburguesa.php"
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Id</th>
                         <th>Nombre</th>
                         <th>Apellido</th>
                         <th>Correo</th>

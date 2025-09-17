@@ -6,13 +6,17 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>Iniciar sesión</title>
     <link href='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+    
     <link href='' rel='stylesheet'>
     <link type="text/css" rel="stylesheet" href="../Css/Style.css" />
+
 
 </head>
 
 <body oncontextmenu='return false' class='snippet-body'>
-    <section class="body">
+    <section class="">
         <div class="container">
             <div class="login-box">
                 <div class="row">
@@ -80,8 +84,7 @@
     </section>
 
 
-    <script type='text/javascript' src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js'></script>
-    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js'></script>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 

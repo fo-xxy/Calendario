@@ -44,7 +44,6 @@ function CargarUsuarios() {
         data.usuarios.forEach((usuario) => {
           const rowHTML = `
             <tr>
-                <td>${usuario.id}</td>
                 <td>${usuario.nombre}</td>
                 <td>${usuario.apellido}</td>
                 <td>${usuario.correo}</td>

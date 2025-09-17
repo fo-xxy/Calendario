@@ -18,9 +18,9 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <a class="navbar-brand" href="#">Administracción</a>
-            <button class="btn btn-primary rounded-pill navbar-toggler" onclick="cerrarSesion()" type="button">
-                Salir
+            <a class="navbar-brand" href="#" id="titulo"></a>
+            <button class="btnSalir rounded-pill navbar-toggler" onclick="cerrarSesion()" type="button">
+                <i class="fa-solid fa-door-open"></i>
             </button>
 
             <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
@@ -52,6 +52,7 @@
 </body>
 
 <script src="../Js/Usuarios/Logout.js"></script>
+<script src="../Js/Script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

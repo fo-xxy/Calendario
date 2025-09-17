@@ -1,3 +1,5 @@
+var datoEventos;
+
 function searchData() {
   const query = document
     .getElementById("datatable-search-input")
@@ -44,7 +46,6 @@ function CargarEventos() {
         data.Efemeride.forEach((evento) => {
           const rowHTML = `
             <tr>
-            <td>${evento.id}</td>
               <td>${evento.titulo}</td>
               <td>${evento.tipo === 1
               ? "Nacimientos"
@@ -56,7 +57,7 @@ function CargarEventos() {
             }</td>
                 <td>${evento.ano}</td>
                 <td>
-                    <button class="transparent-btn btn-edit" onclick="openEditModalEvento(this)">
+                    <button class="transparent-btn btn-edit" onclick="openEditModalEvento(}this)">
                                 <i class="fa-solid fa-pen"></i>
                             </button>
 
@@ -67,6 +68,8 @@ function CargarEventos() {
             </tr>
         `;
           tablaEventos.append(rowHTML);
+
+          datoEventos = data.Efemeride;
         });
 
       } else {
@@ -157,7 +160,7 @@ $("#btnAgregarEvento").on("click", function () {
 });
 
 //Seleccionar registro
-function openEditModalEvento(button) {
+function openEditModalEvento(idEvento, button) {
   const fila = button.closest("tr");
 
   const id = fila.cells[0].textContent.trim();

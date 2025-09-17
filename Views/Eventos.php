@@ -31,11 +31,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
 <body class="colorBody">
 
     <section class="seccionTabla">
-        <div class="titulo">
-            <h4>Eventos</h4>
-
-        </div>
-
+       
         <!-- Enlace para abrir el modal -->
         <div class="text-end mb-3">
             <a href="#" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalAgregarEvento">Agregar evento</a>
@@ -49,7 +45,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Id</th>
+
                         <th>Titulo</th>
                         <th>Tipo</th>
                         <th>Fecha</th>
@@ -88,7 +84,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
                         <select id="selectTipo" class="form-select">
                             <option value="0">Selecciona un tipo</option>
                             <option value="1">Nacimientos</option>
-                            <option value="2">Muertes</option>
+                            <option value="2">Defunciones</option>
                             <option value="3">Acontecimientos</option>
                         </select>
                     </div>
@@ -103,7 +99,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
                     </div>-->
                     <div class="mb-3">
                         <label for="eventoAnio" class="form-label">Año</label>
-                        <input type="datetime" class="form-control" id="inputAnio" required>
+                        <input type="date" class="form-control" id="inputAnio" required>
                     </div>
 
                     <!--<div class="mb-3">

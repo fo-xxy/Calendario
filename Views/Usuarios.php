@@ -24,7 +24,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
         <!-- Enlace para abrir el modal -->
         <div class="text-end mb-3">
             <a href="#" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalAgregarUsuario">Agregar usuario</a>
-            <a href="#" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalCambiarContrasena">Cambiar contraseña</a>
+            <a href="#" class="btnSalir btnCambioPassword btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalCambiarContrasena"><i class="fa-solid fa-key btnCambioPassword"></i></a>
         </div>
         
         <div class="input-group">
@@ -40,7 +40,6 @@ include "../Views/Plantillas/MenuHamburguesa.php"
                         <th>Correo</th>
                         <th>Id rol</th>
                         <th>Acciones</th>
-
                     </tr>
                 </thead>
                 <tbody id="tablaUsuarios">
@@ -49,7 +48,6 @@ include "../Views/Plantillas/MenuHamburguesa.php"
         </div>
         </div>
     </section>
-
 
     <!-- Modal para agregar nuevo evento -->
     <div class="modal fade" id="modalAgregarUsuario" tabindex="-1" aria-labelledby="modalAgregarEventoLabel" aria-hidden="true">

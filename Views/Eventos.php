@@ -31,7 +31,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
 <body class="colorBody">
 
     <section class="seccionTabla">
-       
+
         <!-- Enlace para abrir el modal -->
         <div class="text-end mb-3">
             <a href="#" class="btn btn-primary rounded-pill" data-bs-toggle="modal" data-bs-target="#modalAgregarEvento">Agregar evento</a>
@@ -45,7 +45,7 @@ include "../Views/Plantillas/MenuHamburguesa.php"
             <table class="table table-striped">
                 <thead>
                     <tr>
-
+                        <th>ID</th>
                         <th>Titulo</th>
                         <th>Tipo</th>
                         <th>Fecha</th>

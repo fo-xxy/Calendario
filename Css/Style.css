@@ -23,11 +23,30 @@ body {
     border-color: #3DBFF2 !important;
 }
 
+.b-calendar-nav .btn[aria-label="Previous year"],
+.b-calendar-nav .btn[aria-label="Next year"],
+.b-calendar-nav .btn[aria-label="Current month"] {
+    display: none !important;
+}
+
+
 .b-calendar .b-calendar-grid-body .b-calendar-grid-btn:hover {
     background-color: #3DBFF2;
     color: #fff;
 }
 
+.b-calendar output {
+    display: none;
+}
+
+.listaEventos {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.listaEventos li {
+    margin-bottom: 6px;
+}
 
 .colorBody {
     background-color: white;
@@ -42,7 +61,6 @@ body {
     background-color: #66CAF2;
 }
 
-
 .navbar-toggler {
     background-color: #F2F2F2;
 }
@@ -55,10 +73,8 @@ body {
     background: gray;
     border-radius: 52px;
     margin-left: auto;
-
     display: flex;
     align-items: baseline;
-
     background-color: #66CAF2;
 }
 
@@ -73,7 +89,6 @@ body {
 .pe-3 {
     padding-top: 30px;
 }
-
 
 ul {
     padding-left: 0;
@@ -95,16 +110,12 @@ ul li {
     text-align: justify;
 }
 
-
 .titulo {
     padding-bottom: 20px;
 }
 
-
 .input-group {
     padding-bottom: 30px;
-
-
 }
 
 .seccionTabla {
@@ -121,23 +132,16 @@ ul li {
     max-width: 90%;
 }
 
-
 .transparent-btn {
     background-color: transparent;
-    /* Fondo transparente */
     border: none;
-    /* Elimina el borde */
     padding: 0;
-    /* Elimina el padding para que el ícono esté justo en el centro */
     color: inherit;
-    /* Hereda el color del texto */
     font-size: 1.1rem;
-    /* Ajusta el tamaño del ícono, puedes modificarlo a tu gusto */
 }
 
 .transparent-btn i {
     color: #000;
-    /* Color del ícono */
 }
 
 .transparent-btn:hover i {
@@ -145,14 +149,11 @@ ul li {
 }
 
 
-
-
 @media (max-width: 576px) {
     .b-calendar {
         width: 100% !important;
     }
 }
-
 
 
 /*Estilos para el login*/
@@ -290,6 +291,94 @@ body {
     border: none !important;
     box-shadow: none !important;
     color: black !important;
-    /* asegura que el icono sea negro */
     font-size: 1.2rem;
+}
+
+
+.btnCambioPassword {
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.datepicker-container {
+  width: 300px;
+  border: 1px solid #ccc;
+  font-family: sans-serif;
+}
+.datepicker-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7f7f7;
+  padding: 10px;
+}
+.datepicker-title {
+  margin: 0;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.icon-angle-left,
+.icon-angle-right {
+  cursor: pointer;
+  font-style: normal;
+  user-select: none;
+}
+.datepicker-days {
+  padding: 10px;
+}
+.datepicker-cells {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 5px;
+}
+.datepicker-cell {
+  display: block;
+  text-align: center;
+  padding: 8px;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #eee;
+  transition: background 0.3s;
+}
+
+.datepicker-top{
+    background-color: #fff;
+}
+
+.datepicker-container {
+  background-color: #fff;       
+}
+
+.calendar-divider {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  #app {
+    width: 99%;
+    padding: 0;
+  }
+
+  .datepicker-container,
+  .event-list {
+    width: 99% !important; 
+    max-height: none;      
+    padding: 0 1rem;        
+  }
+
+  .event-scroll {
+    overflow-y: visible;
+    max-height: none;
+  }
 }

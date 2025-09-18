@@ -11,8 +11,6 @@
     
     <link href='' rel='stylesheet'>
     <link type="text/css" rel="stylesheet" href="../Css/Style.css" />
-
-
 </head>
 
 <body oncontextmenu='return false' class='snippet-body'>
@@ -82,8 +80,6 @@
             </div>
         </div>
     </section>
-
-
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

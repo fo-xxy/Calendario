@@ -43,34 +43,39 @@ function CargarEventos() {
 
         data.Efemeride.sort((a, b) => a.id - b.id);
 
+
         data.Efemeride.forEach((evento) => {
-          const rowHTML = `
+            const rowHTML = `
             <tr>
-              <td>${evento.titulo}</td>
+            <td>${evento.id}</td>
+              <td>${evento.titulo.length > 30 ? evento.titulo.slice(0, 30) + '...' : evento.titulo}</td>
               <td>${evento.tipo === 1
               ? "Nacimientos"
               : evento.tipo === 2
-                ? "Muertes"
-                : evento.tipo === 3
-                  ? "Acontecimientos"
-                  : "Sin definir"
+              ? "Muertes"
+              : evento.tipo === 3
+                ? "Acontecimientos"
+                : "Sin definir"
             }</td>
-                <td>${evento.ano}</td>
-                <td>
-                    <button class="transparent-btn btn-edit" onclick="openEditModalEvento(}this)">
-                                <i class="fa-solid fa-pen"></i>
-                            </button>
+<td>${evento.ano ? evento.ano.split(" ")[0] : ""}</td>
+              <td>
+                <button class="transparent-btn btn-edit" onclick="openEditModalEvento(${evento.id}, this)">
+        <i class="fa-solid fa-pen"></i>
+      </button>
 
-                <button class="transparent-btn" onclick="eliminarEvento(${evento.id})">
-                                <i class="fa-solid fa-trash-alt"></i>
-                            </button>
-                </td>
+              <button class="transparent-btn" onclick="eliminarEvento(${evento.id})">
+                      <i class="fa-solid fa-trash-alt"></i>
+                    </button>
+              </td>
             </tr>
-        `;
+          `;
+
           tablaEventos.append(rowHTML);
 
           datoEventos = data.Efemeride;
+
         });
+
 
       } else {
         container.html('<p>No hay eventos disponibles.</p>');
@@ -163,14 +168,17 @@ $("#btnAgregarEvento").on("click", function () {
 function openEditModalEvento(idEvento, button) {
   const fila = button.closest("tr");
 
-  const id = fila.cells[0].textContent.trim();
-  const titulo = fila.cells[1].textContent.trim();
+  const evento = datoEventos.find(e => e.id === idEvento);
+
+  const id = idEvento;
+  const titulo = evento.titulo;
   const tipo = fila.cells[2].textContent.trim();
-  const fecha = fila.cells[3].textContent.trim();
+  const fecha = evento.ano.split(" ")[0];
 
   var tipoMensaje = "";
 
-  console.log(id);
+
+  console.log(fecha);
   $("#inputId").val(id);
   $("#inputTitulo").val(titulo);
 
@@ -185,9 +193,9 @@ function openEditModalEvento(idEvento, button) {
   }
   document.getElementById("selectTipo").value = tipoMensaje;
 
-  const soloFecha = fecha.split(" ")[0];
+  //const soloFecha = fecha.split(" ")[0];
 
-  $("#inputAnio").val(soloFecha);
+  $("#inputAnio").val(fecha);
 
   const btnAgregar = document.getElementById("btnAgregarEvento");
   const btnActualizar = document.getElementById("btnActualizarEvento");
@@ -228,7 +236,9 @@ $("#btnActualizarEvento").on("click", function () {
   var tipo = document.getElementById("selectTipo").value;
   var fecha = document.getElementById("inputAnio").value;
 
-  const datos = { idEvento, titulo, tipo, fecha }
+  const datos = { idEvento, titulo, tipo, ano:fecha }
+
+  console.log(datos)
 
   if (idEvento == "") {
     document.getElementById("inputId").focus();
